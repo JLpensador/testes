@@ -1,6 +1,3 @@
-
-mydict = {83:80}
-x = "hello Sam"
-
-print(x.translate(mydict))
+x = "hello, world!"
+print(x[-5:-2])
 

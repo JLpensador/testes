@@ -1,5 +1,14 @@
 #include <stdio.h>
 
-int main(void) {
-    printf("hello world");
+void meow(void)
+{
+    printf("meow\n");
+}
+
+int main(void)
+{
+    for(int i = 0; i < 3; i++)
+    {
+        meow();
+    }
 }
