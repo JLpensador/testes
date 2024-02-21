@@ -3,7 +3,6 @@ import os
 import random
 import time
 
-
 __doc__ = """
 
 Write a program to display the matrix rain
@@ -16,12 +15,11 @@ Next steps:
 
 """
 
-
 DARK_GREEN = "\033[00;32m"
 LIGHT_GREEN = "\033[01;32m"
 BLACK = "\033[00;30m"
 
-n_columns = os.get_terminal_size().columns // 2 # japanese characters are 2 column wide
+n_columns = os.get_terminal_size().columns // 2  # japanese characters are 2 column wide
 n_rows = os.get_terminal_size().lines
 
 CHARACTERS = [chr(12446 + i) for i in range(96)]
@@ -38,7 +36,7 @@ while True:
     for i in range(n_columns):
 
         a = 0.1
-        probability = round(math.exp(- 1 / abs(a * count[i])) * 100 if count[i] != 0 else 0)
+        probability = round(math.exp(-1 / abs(a * count[i])) * 100 if count[i] != 0 else 0)
 
         if count[i] <= 0:
             bag = [LIGHT_GREEN if n < probability else BLACK for n in range(100)]
@@ -64,7 +62,7 @@ while True:
     if len(colors) > n_rows:
         colors = colors[1:]
 
-    os.system("") # windows: cls
+    os.system("")  # windows: cls
 
     for r, r_c in zip(rows, reversed(colors)):
         for c, c_c in zip(r, r_c):
